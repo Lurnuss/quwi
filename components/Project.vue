@@ -1,7 +1,11 @@
 <template>
   <div class="project__item-wrapper">
     <div class="project__item" @click="$emit('click')">
-      <img v-if="project.logo_url" :src="project.logo_url" alt="project logo">
+      <img
+        v-if="project.logo_url"
+        :src="project.logo_url"
+        alt="project logo"
+      >
       <div class="project__item-name">
         {{ project.name }}
       </div>
@@ -11,15 +15,15 @@
       <div class="project__item-info">
         <div>
           <p>time this week</p>
-          <p>{{ project.spent_sec_this_week ? toDate(project.spent_sec_all_time) : '00:00:00'}}</p>
+          <p>{{ toDate(project.spent_sec_this_week) }}</p>
         </div>
         <div>
           <p>time this month</p>
-          <p>{{ project.spent_sec_this_month ? toDate(project.spent_sec_all_time) : '00:00:00'}}</p>
+          <p>{{ toDate(project.spent_sec_this_month) }}</p>
         </div>
         <div>
           <p>time this week</p>
-          <p>{{ project.spent_sec_all_time ? toDate(project.spent_sec_all_time) : '00:00:00' }}</p>
+          <p>{{ toDate(project.spent_sec_all_time) }}</p>
         </div>
       </div>
     </div>
@@ -37,11 +41,12 @@ export default {
   },
   methods: {
     toDate: (seconds) => {
+      if (!seconds) return '00:00:00'
       const date = new Date(null);
       date.setSeconds(seconds);
       return date.toISOString().substr(11, 8);
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -1,6 +1,11 @@
 <template>
 <div class="project__list container">
-  <Project @click="$emit('openModal', project)" v-for="project in projects" :project="project" :key="project.id"/>
+  <Project
+    @click="$emit('openModal', project)"
+    v-for="project in projects"
+    :project="project"
+    :key="project.id"
+  />
 </div>
 </template>
 
@@ -9,7 +14,7 @@ import Project from "~/components/Project";
 
 export default {
   name: "ProjectList",
-  components: {Project},
+  components: { Project },
   props: {
     projects: {
       type: Array,

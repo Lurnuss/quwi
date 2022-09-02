@@ -3,13 +3,35 @@
     <div class="login__form">
       <div>
         <img src="/Quwi_logo.png" alt="logo">
-        <p>quwi</p>
+        <span>quwi</span>
       </div>
-      <input type="text" v-model="login.email" class="login__form-field" placeholder="email">
-      <input type="password" v-model="login.password" class="login__form-field" placeholder="password">
-      <div class="login__form-err" v-if="errorMessage">{{ errorMessage }}</div>
-      <div class="login__form-btn" @click="$emit('submit', login)">Login</div>
-      <a href="https://quwi.com/forgot" target="_blank">Forgot password?</a>
+      <input
+        type="text"
+        v-model="login.email"
+        class="login__form-field"
+        placeholder="email">
+      <input
+        type="password"
+        v-model="login.password"
+        class="login__form-field"
+        placeholder="password">
+      <div
+        v-if="errorMessage"
+        class="login__form-err"
+      >
+        {{ errorMessage }}
+      </div>
+      <div
+        class="login__form-btn"
+        @click="submit">
+        Login
+      </div>
+      <a
+        href="https://quwi.com/forgot"
+        target="_blank"
+      >
+        Forgot password?
+      </a>
     </div>
   </div>
 </template>
@@ -29,6 +51,11 @@ export default {
       password: '123321',
     },
   }),
+  methods: {
+    submit() {
+      this.$emit('submit', this.login)
+    }
+  }
 }
 </script>
 
@@ -57,7 +84,7 @@ export default {
       gap: 15px;
       margin: 0 auto 15px;
 
-      & p {
+      & span {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 30px;

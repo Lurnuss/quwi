@@ -1,5 +1,8 @@
 <template>
-  <div class="dialog" v-if="show" @click.stop="$emit('toggle')">
+  <div
+    v-if="show"
+    class="dialog"
+    @click.stop="$emit('toggle')">
     <div @click.stop class="dialog__content">
       <slot></slot>
     </div>

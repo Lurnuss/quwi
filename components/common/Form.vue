@@ -1,7 +1,14 @@
 <template>
   <div class="form__wrapper">
-    <input type="text" v-model="form.name" placeholder="name">
-    <div class="form__btn" @click="$emit('update', form)">Update</div>
+    <input
+      type="text"
+      v-model="form.name"
+      placeholder="name">
+    <div
+      class="form__btn"
+      @click="$emit('update', form)">
+      Update
+    </div>
   </div>
 </template>
 
