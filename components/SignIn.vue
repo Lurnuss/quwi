@@ -6,7 +6,7 @@
         <a href="https://quwi.com/signup" target="_blank">signup</a>
       </div>
     </div>
-    <LoginForm @submit="submit()" :errorMessage="errorMessage"/>
+    <LoginForm @submit="submit" :errorMessage="errorMessage"/>
   </div>
 </template>
 
@@ -20,10 +20,10 @@ export default {
     errorMessage: ''
   }),
   methods: {
-    async submit(login) {
+    async submit(credentials) {
       try {
         this.errorMessage = ''
-        await this.$auth.loginWith('local', { data: login })
+        await this.$auth.loginWith('local', { data: credentials })
       } catch(e) {
         this.errorMessage = e.response?.data?.first_errors?.email
       }

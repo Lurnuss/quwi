@@ -9,12 +9,14 @@
         type="text"
         v-model="form.email"
         class="login__form-field"
-        placeholder="email">
+        placeholder="email"
+      >
       <input
         type="password"
         v-model="form.password"
         class="login__form-field"
-        placeholder="password">
+        placeholder="password"
+      >
       <div
         v-if="errorMessage"
         class="login__form-err"
@@ -23,7 +25,8 @@
       </div>
       <div
         class="login__form-btn"
-        @click="submit">
+        @click="submit"
+      >
         Login
       </div>
       <a

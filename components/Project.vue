@@ -15,15 +15,15 @@
       <div class="project__item-info">
         <div>
           <p>time this week</p>
-          <p>{{ toDate(project.spent_sec_this_week) }}</p>
+          <p>{{ project.spent_sec_this_week | toDate }}</p>
         </div>
         <div>
           <p>time this month</p>
-          <p>{{ toDate(project.spent_sec_this_month) }}</p>
+          <p>{{ project.spent_sec_this_mont | toDate }}</p>
         </div>
         <div>
           <p>time this week</p>
-          <p>{{ toDate(project.spent_sec_all_time) }}</p>
+          <p>{{ project.spent_sec_all_time | toDate }}</p>
         </div>
       </div>
     </div>
@@ -39,14 +39,14 @@ export default {
       required: true,
     }
   },
-  methods: {
+  filters: {
     toDate: (seconds) => {
       if (!seconds) return '00:00:00'
       const date = new Date(null);
       date.setSeconds(seconds);
       return date.toISOString().substr(11, 8);
     },
-  },
+  }
 }
 </script>
 

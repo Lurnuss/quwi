@@ -11,8 +11,7 @@ export default {
   },
   methods: {
     toast(type, text) {
-      if (type === 'success')
-        this.$toast.success(text, this.toastOptions)
+      if (type === 'success') this.$toast.success(text, this.toastOptions)
       if (type === 'error') this.$toast.error(text, this.toastOptions)
       if (type === 'info') this.$toast.info(text, this.toastOptions)
     },
