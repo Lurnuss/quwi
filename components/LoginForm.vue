@@ -7,12 +7,12 @@
       </div>
       <input
         type="text"
-        v-model="login.email"
+        v-model="form.email"
         class="login__form-field"
         placeholder="email">
       <input
         type="password"
-        v-model="login.password"
+        v-model="form.password"
         class="login__form-field"
         placeholder="password">
       <div
@@ -46,14 +46,14 @@ export default {
     }
   },
   data: () => ({
-    login: {
+    form: {
       email: '',
       password: '',
     },
   }),
   methods: {
     submit() {
-      this.$emit('submit', this.login)
+      this.$emit('submit', this.form)
     }
   }
 }
