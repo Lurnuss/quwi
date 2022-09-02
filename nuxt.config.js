@@ -1,3 +1,5 @@
+import auth from './config/auth'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -24,11 +26,11 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/services.js',
+    '~/plugins/utils',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
@@ -47,38 +49,10 @@ export default {
     baseURL: '/',
   },
 // Auth
+  auth: auth,
   router: {
     middleware: 'auth'
   },
-  toast: {
-    position: 'bottom-left',
-    keepOnHover: true,
-    duration: 5000,
-    className: 'toast_alert',
-  },
-  auth: {
-    strategies: {
-      local: {
-        token: {
-          property: 'token',
-          global: true,
-          maxAge: false,
-          // required: true,
-          // type: 'Bearer'
-        },
-        user: {
-          property: 'user',
-          // autoFetch: false
-        },
-        endpoints: {
-          login: { url: 'https://api.quwi.com/v2/auth/login', method: 'post' },
-          logout: { url: 'https://api.quwi.com/v2/auth/logout', method: 'post' },
-          user: { url: 'https://api.quwi.com/v2/auth/init', method: 'get' }
-        },
-      }
-    }
-  },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

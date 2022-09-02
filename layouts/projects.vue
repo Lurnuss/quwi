@@ -25,7 +25,7 @@ export default {
         await this.$router.push({ path: 'login' })
       }
       catch(e) {
-        this.$toast.error(e.response?.data?.message ? e.response.data.message : 'oops, something went wrong')
+        this.toast('error', e.response?.data?.message ? e.response.data.message : 'oops, something went wrong')
         e.response ? console.log(e.response.data) : console.log(e)
       }
     }
