@@ -6,7 +6,7 @@
         <a href="https://quwi.com/signup" target="_blank">signup</a>
       </div>
     </div>
-    <LoginForm @submit="submit($event)" :errorMessage="errorMessage"/>
+    <LoginForm @submit="submit()" :errorMessage="errorMessage"/>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import LoginForm from "~/components/LoginForm";
 export default {
   auth: 'guest',
   name: "SignUp",
-  components: {LoginForm},
+  components: { LoginForm },
   data: () => ({
     errorMessage: ''
   }),
