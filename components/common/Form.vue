@@ -40,7 +40,7 @@ export default {
     width: 100%;
 
     & input {
-      border: 1px solid #F2F2F2;
+      border: 1px solid #c2c2c2;
       padding: 20px 20px;
       background: #FFFFFF;
       border-radius: 8px;
