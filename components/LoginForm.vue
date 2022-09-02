@@ -47,8 +47,8 @@ export default {
   },
   data: () => ({
     login: {
-      email: 'QuwiTestMail1@gmail.com',
-      password: '123321',
+      email: '',
+      password: '',
     },
   }),
   methods: {
