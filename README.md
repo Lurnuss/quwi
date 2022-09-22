@@ -16,3 +16,15 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
+## Credentials
+
+#### Login
+```
+test3QuwiTest@gmail.com
+```
+
+#### Password
+```
+123123
+```
