@@ -7,7 +7,7 @@
         alt="project logo"
       >
       <div class="project__item-name">
-        {{ project.name }}
+        {{ project.name | lengthValidator }}
       </div>
       <div class="project__item-status">
         {{ project.is_active ? 'Active' : 'Not Active' }}
@@ -45,6 +45,9 @@ export default {
       const date = new Date(null);
       date.setSeconds(seconds);
       return date.toISOString().substr(11, 8);
+    },
+    lengthValidator: (string) => {
+      return string.length > 20 ? string.substr(0, 17) + '...' : string
     },
   }
 }
