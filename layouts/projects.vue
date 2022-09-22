@@ -4,7 +4,7 @@
     <div class="header container">
       <img src="/Quwi_logo.png" alt="logo">
       <div>
-        <p>projects</p>
+        <a href="https://quwi.com/login" target="_blank">projects</a>
         <p @click="logout()">logout</p>
       </div>
     </div>
