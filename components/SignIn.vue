@@ -25,7 +25,7 @@ export default {
         this.errorMessage = ''
         await this.$auth.loginWith('local', { data: credentials })
       } catch(e) {
-        this.errorMessage = e.response?.data?.first_errors?.email
+        this.errorMessage = e.response?.data?.first_errors?.email || e.response?.data?.first_errors?.password
       }
     }
   },
